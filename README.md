@@ -1,12 +1,12 @@
-# AWS VPC Peering Implementation – Private Network Connectivity
+AWS VPC Peering Implementation – Private Network Connectivity
 
-## 1. Introduction
+1. Introduction
 
 This project focuses on connecting two isolated Amazon Virtual Private Clouds (VPCs) using AWS VPC Peering. The objective is to enable communication between private EC2 instances without exposing application servers directly to the public internet.
 
 A Bastion Host is deployed in the public subnet to provide a controlled administrative access point.
 
-## 2. Project Objectives
+2. Project Objectives
 
 - Create two independent VPC networks.
 - Configure public and private subnets.
@@ -16,7 +16,7 @@ A Bastion Host is deployed in the public subnet to provide a controlled administ
 - Deploy EC2 instances in the required subnets.
 - Understand secure access to private cloud resources.
 
-## 3. AWS Infrastructure Design
+3. AWS Infrastructure Design
 
 The environment consists of the following components:
 
@@ -31,7 +31,7 @@ The environment consists of the following components:
 | Compute service | Amazon EC2 |
 | Network connection | VPC Peering |
 
-## 4. Services and Technologies
+4. Services and Technologies
 
 - Amazon Virtual Private Cloud (VPC)
 - Amazon EC2
@@ -41,21 +41,21 @@ The environment consists of the following components:
 - Security Groups
 - Amazon Linux 2023
 
-## 5. Network Components
+5. Network Components
 
-### VPC 1
+VPC 1
 The first VPC contains a public subnet and a private subnet. The public subnet hosts the Bastion Host, while the private subnet contains the first application instance.
 
-### VPC 2
+VPC 2
 The second VPC contains a private subnet with another application instance. It does not require a direct internet gateway.
 
-### Bastion Host
+astion Host
 The Bastion Host acts as an entry point for administrative SSH connections to private instances.
 
-### VPC Peering
+VPC Peering
 A peering connection links the two VPC networks and allows private IP communication when the appropriate routes and security rules are configured.
 
-## 6. Routing and Security
+6. Routing and Security
 
 Custom route tables are configured to direct traffic between the two VPC CIDR ranges through the peering connection.
 
@@ -64,7 +64,7 @@ Security groups control incoming connections:
 - ICMP traffic is configured for private connectivity testing.
 - Application instances do not receive public IPv4 addresses.
 
-## 7. Implementation Procedure
+7. Implementation Procedure
 
 1. Create two VPCs with non-overlapping CIDR ranges.
 2. Create the required subnets.
@@ -76,13 +76,13 @@ Security groups control incoming connections:
 8. Configure the required security group rules.
 9. Perform connectivity verification where completed.
 
-## 8. Project Results
+8. Project Results
 
 The AWS networking resources were created and configured according to the planned architecture.
 
 **Verification status:** Record the actual results of SSH and ICMP connectivity tests here. Do not report successful communication unless it has been tested.
 
-## 9. Skills Acquired
+9. Skills Acquired
 
 - AWS network architecture and configuration.
 - VPC and subnet management.
